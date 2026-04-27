@@ -21,7 +21,7 @@ function buildBlogCard(blog, featured = false) {
 
   return `
     <article class="blog-card${featured ? ' blog-card--featured' : ''} reveal" role="article">
-      <a href="blog-details/${blog.slug}" class="blog-card__img-wrap" aria-label="Read ${blog.title}">
+      <a href="/blog-details?slug=${blog.slug}" class="blog-card__img-wrap" aria-label="Read ${blog.title}">
         ${hasImage
           ? `<img src="${imageUrl}" alt="${blog.title}" class="blog-card__img" loading="lazy" width="800" height="450">`
           : `<div class="blog-card__img-placeholder" aria-hidden="true">
@@ -39,10 +39,10 @@ function buildBlogCard(blog, featured = false) {
           <span class="blog-card__time">${timeToRead}</span>
         </div>
         <h2 class="blog-card__title">
-          <a href="blog-details/${blog.slug}">${blog.title}</a>
+          <a href="/blog-details?slug=${blog.slug}">${blog.title}</a>
         </h2>
         ${excerpt ? `<p class="blog-card__excerpt">${excerpt}</p>` : ''}
-        <a href="blog-details/${blog.slug}" class="blog-card__read-more" aria-label="Read full article: ${blog.title}">
+        <a href="/blog-details?slug=${blog.slug}" class="blog-card__read-more" aria-label="Read full article: ${blog.title}">
           Read Article
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
