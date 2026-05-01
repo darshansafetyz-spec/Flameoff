@@ -280,11 +280,30 @@
     .article-not-found p { color: var(--dim); margin-bottom: 28px; line-height: 1.7; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      #nav { padding: 14px 24px; }
+ @media (max-width: 768px) {
+      #nav { padding: 14px 20px; }
       .nav-center { display: none; }
-      .article-hero__meta-bar { padding: 28px 20px 0; }
-      .article-layout { padding: 36px 20px 80px; }
+      .nav-btn-fill { padding: 8px 14px; font-size: 0.7rem; }
+      .article-hero { padding-top: 72px; }
+      .article-hero__img { max-height: 340px; }
+      .article-hero__meta-bar { padding: 24px 20px 0; }
+      .article-title { font-size: clamp(2rem, 8vw, 3rem); }
+      .article-layout { padding: 32px 20px 72px; }
+      .article-prose { font-size: 1rem; line-height: 1.8; }
+      .article-footer-bar { flex-direction: column; align-items: flex-start; gap: 20px; }
+    }
+    @media (max-width: 480px) {
+      #nav { padding: 12px 16px; }
+      .nav-btn-fill { padding: 7px 12px; font-size: 0.66rem; letter-spacing: 1px; }
+      .article-hero__img { max-height: 240px; }
+      .article-hero__meta-bar { padding: 20px 16px 0; }
+      .article-title { font-size: clamp(1.8rem, 9vw, 2.4rem); }
+      .article-layout { padding: 28px 16px 60px; }
+      .article-info { gap: 10px; font-size: 0.78rem; }
+      .article-prose { font-size: 0.96rem; }
+      .article-prose h2 { font-size: clamp(1.4rem, 6vw, 1.9rem); }
+      .article-prose h3 { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+      .share-bar { flex-wrap: wrap; gap: 8px; }
     }
   </style>
 </head>
@@ -387,8 +406,7 @@
 
   /* ── Load blog by slug ── */
   async function loadArticle() {
-    const pathParts = window.location.pathname.split('/').filter(Boolean);
-    const slug = pathParts[pathParts.length - 1] || new URLSearchParams(window.location.search).get('slug');
+    const slug = new URLSearchParams(window.location.search).get('slug');
 
     if (!slug) {
       renderNotFound('No article specified.');
@@ -458,7 +476,7 @@
           </div>
 
           <footer class="article-footer-bar">
-            <a href="blog.html" class="btn-back" aria-label="Back to all articles">
+            <a href="/blog.html" class="btn-back" aria-label="Back to all articles">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M13 7H1M6 2L1 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>

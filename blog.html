@@ -304,18 +304,33 @@
     }
     .blog-footer a { color: var(--r); text-decoration: none; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
+   @media (max-width: 1024px) {
       .blog-card--featured { flex-direction: column; }
       .blog-card--featured .blog-card__img-wrap { width: 100%; aspect-ratio: 16/9; }
+      .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     }
     @media (max-width: 768px) {
-      #nav { padding: 14px 24px; }
+      #nav { padding: 14px 20px; }
       .nav-center { display: none; }
-      .blog-hero { padding: 120px 24px 60px; }
-      .blog-section { padding: 50px 24px 80px; }
-      .blog-grid { grid-template-columns: 1fr; gap: 24px; }
-      .blog-footer { padding: 30px 24px; }
+      .nav-btn-fill { padding: 8px 14px; font-size: 0.7rem; }
+      .blog-hero { padding: 110px 20px 52px; }
+      .blog-hero__title { font-size: clamp(2.4rem, 10vw, 4rem); }
+      .blog-hero__sub { font-size: 0.92rem; }
+      .blog-section { padding: 40px 20px 72px; }
+      .blog-grid { grid-template-columns: 1fr; gap: 20px; }
+      .blog-footer { padding: 28px 20px; }
+      .blog-pagination { gap: 8px; }
+      .pagination-btn { padding: 9px 16px; font-size: 0.7rem; }
+    }
+    @media (max-width: 480px) {
+      #nav { padding: 12px 16px; }
+      .nav-btn-fill { padding: 7px 12px; font-size: 0.66rem; letter-spacing: 1px; }
+      .blog-hero { padding: 96px 16px 44px; }
+      .blog-section { padding: 32px 16px 60px; }
+      .blog-grid { gap: 16px; }
+      .blog-card__body { padding: 16px 18px 20px; }
+      .blog-card__title { font-size: 1.05rem; }
+      .blog-footer { padding: 24px 16px; font-size: 0.78rem; }
     }
   </style>
 </head>
@@ -327,7 +342,7 @@
 <!-- ── NAV ── -->
 <nav id="nav" role="navigation" aria-label="Main navigation">
   <a href="index.html" class="logo" aria-label="Flame Off – Home">
-    <img id="logo-nav" src="https://darshansafety.in/wp-content/uploads/2026/04/facebook-ADS-6.avif.png" alt="Flame Off Logo" width="200" height="50">
+    <img id="logo-nav" src="https://darshansafety.in/wp-content/uploads/2026/04/facebook-ADS-6.avif" alt="Flame Off Logo" width="200" height="50">
   </a>
   <ul class="nav-center">
     <li><a href="index.html#shop">Shop</a></li>
