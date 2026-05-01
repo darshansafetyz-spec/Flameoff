@@ -492,13 +492,6 @@ a { text-decoration: none; }
   border-color: var(--r); background: rgba(255,60,0,0.08);
   box-shadow: 0 4px 24px rgba(255,60,0,0.2); transform: translateY(-3px);
 }
-
-.scroll-ind {
-  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  color: var(--dim); font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
-  cursor: none;
-}
 .scroll-line {
   width: 1px; height: 50px;
   background: linear-gradient(to bottom, var(--r), transparent);
@@ -991,7 +984,7 @@ footer {
 .foot-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
 .foot-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; letter-spacing: 6px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; margin-bottom: 12px; }
 .foot-logo a { display: block; }
-.foot-logo img { max-width: 180px; }
+.foot-logo img { width: 240px; }
 .foot-desc { color: var(--dim); font-size: 0.87rem; line-height: 1.7; }
 .fcol h4 { font-family: 'Oswald', sans-serif; font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 18px; color: var(--txt); }
 .fcol ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -1234,10 +1227,6 @@ footer {
       </a>
     </div>
   </div>
-  <button class="scroll-ind" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" aria-label="Scroll down to shop">
-    <span>Scroll</span>
-    <div class="scroll-line" aria-hidden="true"></div>
-  </button>
 </section>
 
 <!-- ══ MARQUEE ══ -->
